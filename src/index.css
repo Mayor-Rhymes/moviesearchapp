@@ -1,13 +1,168 @@
-body {
+*{
+
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'DM Sans';
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+nav{
+
+    height: 140px;
+    /* width: 1440px; */
+    background-color: #292929;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding-left: 77px;
+
+    
+
+}
+
+.mid{
+
+
+  height: 550px;
+  background: url('./images/Rectangle 5.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-left: 77px;
+
+}
+
+.mid h1{
+
+
+  color: white;
+  font-size: 72px;
+  line-height: 93.74px;
+  text-align: justify;
+  font-weight: 700;
+  
+
+}
+
+.back{
+
+
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  background-color: black;
+  opacity: 0.1;
+}
+
+.main-content > section{
+
+
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+  gap: 10px;
+
+
+  
+  
+}
+
+.searcher{
+
+
+  height: 54px;
+  padding: 20px;
+
+}
+
+.movie-title{
+
+
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+
+.movies{
+
+  padding: 0 50px;
+}
+
+
+
+
+.moves-1{
+
+
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  column-gap: 10px;
+  row-gap: 40px;
+
+  height: 300px;
+  align-items: center;
+  /* justify-content: center; */
+  
+
+  
+  
+  
+}
+
+.block{
+
+  height: 280px;
+  width: 280px;
+  background-color: black;
+  border-radius: 12px;
+
+  color: white;
+  font-size: 24px;
+
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  
+}
+
+.poster{
+
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 12px;
+  opacity: .5;
+
+}
+
+
+@media screen and (max-width: 834px){
+
+  nav{
+
+
+    justify-content: center;
+    padding: 0;
+
+  }
+
+  .mid{
+
+    justify-content: center;
+    padding: 0;
+    text-align: center;
+  }
+
+
+
+
 }

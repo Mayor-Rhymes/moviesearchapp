@@ -1,25 +1,52 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState, useEffect} from 'react';
+import Nav from './Nav';
+import Mid from './Mid';
+import MainContent from './MainContent';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+export default function App(){
+  
+
+  const [searchContent, changeSearchContent] = useState('');
+  const transferSearch = (e) => {
+      
+       e.preventDefault();
+       changeSearchContent(e.target.value);
+       
+
+
+        
+  }
+
+
+  const [movies, setMovies] = useState([]);
+
+	const getMovies = async () => {
+		const url = `http://www.omdbapi.com/?s=${searchContent}&apikey=7d9bc6ad`;
+
+		const res = await fetch(url);
+		const resJson = await res.json();
+
+		if (resJson.Search) {
+			setMovies(resJson.Search);
+		}
+	};
+
+
+
+	useEffect(() => {
+		getMovies();
+	});
+   return(
+
+
+    
+    <div>
+
+       <Nav />
+       <Mid />
+
+       <MainContent movies = {movies} transferSearch = {transferSearch}/>
+        
     </div>
-  );
+   )
 }
-
-export default App;
